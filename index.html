@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- animations and icons added -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance Weather App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+ </head>
+
+<body>
+    <div class="container">
+        <h1>Weather App</h1>
+        <div class="input-container">
+            <input type="text" id="city" placeholder="Enter City Name" required>
+            <button id="getWeatherBtn">Search</button>
+        </div>
+        <div class="weather-info">
+            <h2 id="cityName"></h2>
+            <img id="weatherIcon" src="" alt="Weather Icon" style="display: none;">
+            <div class="weather-card">
+                <div class="weather-item">
+                    <div class="weather-item-left">
+                        <span class="icon">🌡️</span>
+                        <span>Temperature:</span>
+                    </div>
+                    <span id="temperature"></span>
+                </div>
+                <div class="weather-item">
+                    <div class="weather-item-left">
+                        <span class="icon">💨</span>
+                        <span>Feels like:</span>
+                    </div>
+                    <span id="feellike"></span>
+                </div>
+                <div class="weather-item">
+                    <div class="weather-item-left">
+                        <span class="icon">☁️</span>
+                        <span>Condition:</span>
+                    </div>
+                    <span id="weatherDescription"></span>
+                </div>
+                <div class="weather-item">
+                    <div class="weather-item-left">
+                        <span class="icon">💧</span>
+                        <span>Humidity:</span>
+                    </div>
+                    <span id="humidity"></span>
+                </div>
+                <div class="weather-item">
+                    <div class="weather-item-left">
+                        <span class="icon">📊</span>
+                        <span>Pressure:</span>
+                    </div>
+                    <span id="pressure"></span>
+                </div>
+                <div class="weather-item">
+                    <div class="weather-item-left">
+                        <span class="icon">👁️</span>
+                        <span>Visibility:</span>
+                    </div>
+                    <span id="visibility"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
