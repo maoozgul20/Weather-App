@@ -15,6 +15,7 @@ This is a visually appealing and responsive weather application built using HTML
 
 * **index.html** — The main HTML file containing the structure of the app.
 * **style.css** — External CSS file for visual design, animations, layout, and responsiveness.
+* **config.example.js** — Template for `config.js`, which holds your API key (not committed).
 * **script.js** — External JavaScript file containing logic to fetch data from the API, update the UI, handle search, and apply animations.
 * **OpenWeatherMap API** — External service used to retrieve live weather data.
 * **Unsplash Backgrounds** — Background images change dynamically based on weather conditions using high-quality Unsplash images.
@@ -26,11 +27,15 @@ This is a visually appealing and responsive weather application built using HTML
 3. Enter a city name and click **Search** or press **Enter**.
 4. View the current weather data with animated visuals.
 
-> ⚠️ You’ll need an **OpenWeatherMap API key** to run this project. Replace the placeholder API key in the script with your own.
+> ⚠️ You’ll need a free **OpenWeatherMap API key** to run this project.
+
+Copy `config.example.js` to `config.js` and put your key in it:
 
 ```javascript
-const apiKey = 'YOUR_API_KEY_HERE';
+window.WEATHER_API_KEY = 'YOUR_API_KEY_HERE';
 ```
+
+`config.js` is listed in `.gitignore`, so your key stays out of the repository. Keep in mind that any key used by front-end code can still be seen in the browser; for a public deployment, route requests through a small serverless proxy that holds the key.
 
 ## Demo Preview
 
