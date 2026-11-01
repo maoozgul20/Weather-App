@@ -1,55 +1,90 @@
 # Advance Weather App (HTML, CSS & JavaScript)
 
-This is a visually appealing and responsive weather application built using HTML, CSS, and JavaScript. It fetches real-time weather data from the OpenWeatherMap API and presents it with smooth animations, icons, and a dynamic background that changes based on the current weather condition.
+A responsive weather app built with plain HTML, CSS and JavaScript, with no frameworks and no build step. Search for any city to see its current weather, shown on a glassmorphism card with animated details and a background photo that matches the conditions.
+
+![App Screenshot](Screenshot.jpeg)
 
 ## Features
 
-* 🌤️ Real-time weather information using **OpenWeatherMap API**
-* 🎨 Modern **glassmorphism UI** with dynamic backgrounds
-* 🔍 Search for any city to get current weather details
-* 🖼️ Animated display of weather details and transitions
-* 🌐 Fully responsive and mobile-friendly design
-* 🎯 Includes temperature, humidity, pressure, visibility, condition, and more
+* 🌤️ **Live weather** from the [OpenWeatherMap API](https://openweathermap.org/api)
+* 🔍 **Search any city** with the Search button or the Enter key, including names with spaces or accents (e.g. *São Paulo*)
+* 🎯 **Weather details**: temperature, feels like, condition, humidity, pressure and visibility
+* 🖼️ **Dynamic backgrounds** for clear, cloudy, rain, drizzle, thunderstorm, snow, and mist/fog/haze/dust conditions
+* ✨ **Smooth animations**, with staggered entrance of each detail row
+* ⏳ **Loading state**: the button shows "Loading…" while a search runs
+* ⚠️ **Clear error messages** for unknown cities, network problems or a missing API key
+* 📱 **Responsive design** that fits phones as well as desktops
+* ♿ **Accessible**: labelled search box, results announced to screen readers, and reduced motion for users who ask for it
 
-## Project Structure
+## Getting Started
 
-* **index.html** — The main HTML file containing the structure of the app.
-* **style.css** — External CSS file for visual design, animations, layout, and responsiveness.
-* **config.example.js** — Template for `config.js`, which holds your API key (not committed).
-* **script.js** — External JavaScript file containing logic to fetch data from the API, update the UI, handle search, and apply animations.
-* **OpenWeatherMap API** — External service used to retrieve live weather data.
-* **Unsplash Backgrounds** — Background images change dynamically based on weather conditions using high-quality Unsplash images.
+### 1. Get a free API key
 
-## How to Use
+Sign up at [openweathermap.org](https://home.openweathermap.org/users/sign_up) and copy your key from the **API keys** page. New keys can take up to a couple of hours to activate.
 
-1. Clone the repository or download the project files.
-2. Open the `index.html` file in any modern browser.
-3. Enter a city name and click **Search** or press **Enter**.
-4. View the current weather data with animated visuals.
+### 2. Download the project
 
-> ⚠️ You’ll need a free **OpenWeatherMap API key** to run this project.
+```bash
+git clone https://github.com/maoozgul20/Weather-App.git
+cd Weather-App
+```
 
-Copy `config.example.js` to `config.js` and put your key in it:
+Or click **Code → Download ZIP** on GitHub and unzip it.
+
+### 3. Add your API key
+
+Make a copy of `config.example.js` named `config.js`, then open it and paste in your key:
 
 ```javascript
 window.WEATHER_API_KEY = 'YOUR_API_KEY_HERE';
 ```
 
-`config.js` is listed in `.gitignore`, so your key stays out of the repository. Keep in mind that any key used by front-end code can still be seen in the browser; for a public deployment, route requests through a small serverless proxy that holds the key.
+`config.js` is listed in `.gitignore`, so your key is never committed.
 
-## Demo Preview
+### 4. Run it
 
-![App Screenshot](Screenshot.jpeg)
+Open `index.html` in any modern browser, type a city name and press **Enter**.
+
+## Project Structure
+
+| File | Purpose |
+| --- | --- |
+| `index.html` | Page structure: search form and weather card |
+| `style.css` | Glassmorphism styling, animations and mobile layout |
+| `script.js` | Fetches weather data, updates the page, handles errors and backgrounds |
+| `config.example.js` | Template for `config.js`, which holds your API key |
+| `config.js` | Your own API key (you create this; not committed) |
+
+## Troubleshooting
+
+| Message | What to do |
+| --- | --- |
+| *Missing API key* | Create `config.js` from `config.example.js` (step 3). |
+| *Error: Invalid API key* | Check the key, or wait for a new key to activate. |
+| *City not found* | Check the spelling, or add the country code, e.g. `London,GB`. |
+| *Couldn't load weather* | Check your internet connection and try again. |
+
+## A note on API key security
+
+Any key used by front-end JavaScript can be seen by anyone who opens the site's developer tools. Keeping it in `config.js` keeps it out of GitHub, but if you publish the app online, consider sending requests through a small serverless function (Netlify, Vercel or Cloudflare) that holds the key on the server.
+
+## Ideas for Future Improvements
+
+* 📍 Use my location (browser geolocation)
+* 🌡️ °C / °F toggle
+* 📅 5-day forecast
+* 💾 Remember the last searched city
+* 🌬️ Wind speed, sunrise and sunset times
+* 🌙 Day and night backgrounds
 
 ## Technologies Used
 
 * HTML5
-* CSS3 (Glassmorphism, Animations)
-* JavaScript (Fetch API, DOM manipulation)
-* OpenWeatherMap API
-* Unsplash (for background images)
+* CSS3 (glassmorphism, keyframe animations, media queries)
+* JavaScript (Fetch API, async/await, DOM manipulation)
+* [OpenWeatherMap API](https://openweathermap.org/current)
+* [Unsplash](https://unsplash.com) for background images
 
 ## License
 
-This project is open-source and free to use under the [MIT License](LICENSE).
-
+This project is open source under the [MIT License](LICENSE).
